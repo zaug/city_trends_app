@@ -1,0 +1,40 @@
+﻿<vm:MainViewModel
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:vm="clr-namespace:City_Trends.ViewModels"
+    SampleProperty="Sample Text Property Value">
+    <!--Dokumentálva!-->
+    <vm:MainViewModel.Tips>
+        <vm:TipView ID="51ff53e2498ef63d06bc7870" 
+                          CreatedAt="1375687650" 
+                          Text="Start by the fountain and the music!! Then rent a bike with the kids. Remeber swimsuit and go to the  Palatinus Strandfürdő for the hole day. Bring water, own food and things for a picnic"
+                          Likes="3 ember kedveli ezt"
+                          User = "David K."/>
+        <vm:TipView ID="51ff53e2498ef63d06bc7870" 
+                          CreatedAt="1375687650" 
+                          Text="Start by the fountain and the music!! Then rent a bike with the kids. Remeber swimsuit and go to the  Palatinus Strandfürdő for the hole day. Bring water, own food and things for a picnic"
+                          Likes="3 ember kedveli ezt"
+                          User = "David K."/>
+        <vm:TipView ID="51ff53e2498ef63d06bc7870" 
+                          CreatedAt="1375687650" 
+                          Text="Start by the fountain and the music!! Then rent a bike with the kids. Remeber swimsuit and go to the  Palatinus Strandfürdő for the hole day. Bring water, own food and things for a picnic"
+                          Likes="3 ember kedveli ezt"
+                          User = "David K."/>
+        <vm:TipView ID="51ff53e2498ef63d06bc7870" 
+                          CreatedAt="1375687650" 
+                          Text="Start by the fountain and the music!! Then rent a bike with the kids. Remeber swimsuit and go to the  Palatinus Strandfürdő for the hole day. Bring water, own food and things for a picnic"
+                          Likes="3 ember kedveli ezt"
+                          User = "David K."/>
+        <vm:TipView ID="51ff53e2498ef63d06bc7870" 
+                          CreatedAt="1375687650" 
+                          Text="Start by the fountain and the music!! Then rent a bike with the kids. Remeber swimsuit and go to the  Palatinus Strandfürdő for the hole day. Bring water, own food and things for a picnic"
+                          Likes="3 ember kedveli ezt"
+                          User = "David K."/>
+        <vm:TipView ID="51ff53e2498ef63d06bc7870" 
+                          CreatedAt="1375687650" 
+                          Text="Start by the fountain and the music!! Then rent a bike with the kids. Remeber swimsuit and go to the  Palatinus Strandfürdő for the hole day. Bring water, own food and things for a picnic"
+                          Likes="3 ember kedveli ezt"
+                          User = "David K."/>
+    </vm:MainViewModel.Tips>
+
+</vm:MainViewModel>

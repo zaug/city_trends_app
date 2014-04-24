@@ -1,0 +1,22 @@
+﻿<vm:MainViewModel
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:vm="clr-namespace:City_Trends.ViewModels"
+    SampleProperty="Sample Text Property Value">
+    <!--Dokumentálva!-->
+    <vm:MainViewModel.Favourites>
+        <vm:FavouriteView UserFavID="51ff53e2498ef63d06bc7870" 
+                          UserFavVenue="Margitsziget \/ Margit híd (4, 6)"/>
+        <vm:FavouriteView UserFavID="51ff53e2498ef63d06bc7870" 
+                          UserFavVenue="Margitsziget \/ Margit híd (4, 6)"/>
+        <vm:FavouriteView UserFavID="51ff53e2498ef63d06bc7870" 
+                          UserFavVenue="Margitsziget \/ Margit híd (4, 6)"/>
+        <vm:FavouriteView UserFavID="51ff53e2498ef63d06bc7870" 
+                          UserFavVenue="Margitsziget \/ Margit híd (4, 6)"/>
+        <vm:FavouriteView UserFavID="51ff53e2498ef63d06bc7870" 
+                          UserFavVenue="Margitsziget \/ Margit híd (4, 6)"/>
+        <vm:FavouriteView UserFavID="51ff53e2498ef63d06bc7870" 
+                          UserFavVenue="Margitsziget \/ Margit híd (4, 6)"/>
+    </vm:MainViewModel.Favourites>
+
+</vm:MainViewModel>

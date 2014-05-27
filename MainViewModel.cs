@@ -17,24 +17,20 @@ namespace City_Trends.ViewModels
 {
     public class MainViewModel : INotifyPropertyChanged
     {
-        public MainViewModel()  //Dokumentálva!
+        public MainViewModel()  
         {
             this.Venues = new ObservableCollection<VenueView>();
             this.Tips = new ObservableCollection<TipView>();
             this.Favourites = new ObservableCollection<FavouriteView>();
         }
         
-        // Dokumentálva!
         public ObservableCollection<VenueView> Venues { get; private set; }
         public ObservableCollection<TipView> Tips { get; private set; }
         public ObservableCollection<FavouriteView> Favourites { get; private set; }
         
 
         private string _sampleProperty = "Sample Runtime Property Value";
-        /// <summary>
-        /// Sample ViewModel property; this property is used in the view to display its value using a Binding
-        /// </summary>
-        /// <returns></returns>
+       
         public string SampleProperty
         {
             get
@@ -58,14 +54,13 @@ namespace City_Trends.ViewModels
                 return AppResources.SampleProperty;
             }
         }
-        // Dokumentálva!
+        
         public bool IsDataLoaded
         {
             get;
             private set;
         }
 
-        // Dokumentálva!
         public async void LoadVenues(string searchKey)
         {
             this.Venues.Clear();         // Frissítjük a felületet minden egyes újratöltéskor.
@@ -95,26 +90,21 @@ namespace City_Trends.ViewModels
             {   
                 // VenueData kimenetek:
                 Venue_ID = venueData[item].id;
-                // Minta: "Margitsziget \/ Margit híd (4, 6)" 
                 Name = venueData[item].name;
-                // Minta: "Margit híd * Tőled 6 m távolságra * Itt: Budapest II. kerülete, Magyarország, (HU)." 
                 Location = string.Format("{0} ▲ Tőled {1}m távolságra ►     Itt: {2}, {3}, ({4}).",
                                          venueData[item].location.address,
                                          venueData[item].location.distance.ToString(),
                                          venueData[item].location.city,
                                          venueData[item].location.country,
                                          venueData[item].location.cc);
-                // Minta: "#Trams, #Bridge, #Island"
                 for (int categoryName = 0; categoryName < venueData[item].categories.Count; ++categoryName)
                 {
                     Categories += string.Join(", ", "#"+venueData[item].categories[categoryName].pluralName); // Hashtag képzés.
                 }
-                // Minta: "3949 check-in ▼ 1883 látogató ◄ 5 tipp ☺ .
                 Stats = string.Format("{0} check-in ▼ {1} látogató ◄ {2} tipp.",
                                       venueData[item].stats.checkinsCount.ToString(),
                                       venueData[item].stats.usersCount.ToString(),
                                       venueData[item].stats.tipCount.ToString());
-                // Minta: "3 ember van ott."
                 HereNow = string.Format("{0} ember van ott.",venueData[item].hereNow.count.ToString());
                 // Hozzáadjuk a rekordot:
                 this.Venues.Add(new VenueView()
@@ -130,7 +120,7 @@ namespace City_Trends.ViewModels
             }
             this.IsDataLoaded = true;    
         }
-        // Dokumentálva!
+        
         public async void LoadTips(string selectedVenue)
         {
             this.Tips.Clear();
@@ -146,11 +136,6 @@ namespace City_Trends.ViewModels
             // Felkészítjük a Tips kollekciót:
             for (int item = 0; item < tipModel.response.tips.items.Count; ++item)
             {
-                /*Minta:  2010.06.25 ▲ Zsolt R.:
-                      A villamos megáll, mert már átadták a megállót.
-                      4 ember kedveli ezt.
-                */
-                //CreatedAt = tipModel.response.tips.items[item].createdAt.ToString();
                 Text = tipModel.response.tips.items[item].text;
                 Likes = tipModel.response.tips.items[item].likes.count.ToString();
                 User = (tipModel.response.tips.items[item].user.firstName) + " " +
@@ -167,7 +152,7 @@ namespace City_Trends.ViewModels
             this.IsDataLoaded = true;
         }
 
-        public void LoadFavourites(Dictionary<string, string> favourites, bool refresh) // Dokumentálva!
+        public void LoadFavourites(Dictionary<string, string> favourites, bool refresh) 
         {
             this.Favourites.Clear();
 

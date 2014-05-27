@@ -17,7 +17,7 @@ namespace City_Trends
              */
 
     public class GPS
-    {   // Dokumentálva!
+    {   
         public async Task<double[]> UpdateMyMap()
         {
             Geolocator location = new Geolocator();
@@ -42,7 +42,6 @@ namespace City_Trends
             }
         }
 
-        // Dokumentálva!
         public void SetProgressIndicator(bool isVisible)
         {
             SystemTray.ProgressIndicator.IsVisible = isVisible;

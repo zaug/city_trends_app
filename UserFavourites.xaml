@@ -36,7 +36,7 @@
                            VerticalAlignment="Center"/>
             </Grid>
         </DataTemplate>
-    </phone:PhoneApplicationPage.Resources><!--Dokumentálva!-->
+    </phone:PhoneApplicationPage.Resources>
 
 
     <!--LayoutRoot is the root grid where all page content is placed-->
@@ -65,7 +65,7 @@
                                     ItemTemplate="{StaticResource FavouritesPageList}"
                                     ItemsSource="{Binding Favourites}"
                                     SelectionChanged="FavListSelector_SelectionChanged"/>
-        </Grid><!--Dokumentálva!-->
+        </Grid>
     </Grid>
 
 </phone:PhoneApplicationPage>

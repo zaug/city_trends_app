@@ -12,14 +12,7 @@ using System.Threading.Tasks;
 */
 
 namespace City_Trends
-{   // Dokumentálva!
-    /*{
-             "meta":{},
-	         "venues":[{}],
-			 "neighborhoods":[],		
-			 "confident":
-       }
-    */
+{   
     public class VenueGroup
     {
         public List<VenueData> venues { get; set; }     // Tartalmazza az összes adatot, az összes helyszínről.

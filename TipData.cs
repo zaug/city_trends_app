@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace City_Trends.Tips
-{   // Dokumentálva!
+{   
     public class TipData
     {
         public string id { get; set; }

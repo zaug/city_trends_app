@@ -25,35 +25,33 @@ namespace City_Trends
               Ehhez a NuGet Package Manager konzolba a következőket kell beírnunk:
               
               install-package Newtonsoft.Json       // A továbbiakban sűrűn fogunk JSON adatokkal dolgozni.
-              install-package Microsoft.Net.Http    // Alkalmazásunkból lehetőségünk lesz online adatot használni.
-        */
+              install-package Microsoft.Net.Http    // Alkalmazásunkból lehetőségünk lesz online adatot használni.*/
+              
         /*4.)Fel kell használnunk a requestURL-t, és le kell töltenünk az adatokat. A kapott JSON adatot deszerializálnunk kell,
              hogy meg tudjunk feleltetni minden adattagot azok osztálypéldányának. Ehhez az adatokat osztályokba kell szerveznem.
              Hogy az adatok osztályokon belüli ábrázolása illetve azok terjedelme miatt ne legyen káosz,
             számos új modult készítek az adatmodellhez.
-            (VenueModel.cs, VenueGroup.cs, VenueData.cs).
-        */
+            (VenueModel.cs, VenueGroup.cs, VenueData.cs).*/
+            
         /*7.)Miután minden adatot a helyére szerveztünk, a következő lépés az MVVM (Model-View-View-Model) minta implementációja.
              Kiindulási pontként az IDE által nyújtott Windows Phone DataBound App projektsablonját választottam, mint remek
              kiindulópontot és kódmintát. A következőkben xaml vezérlőkhöz készítek erőforrásokat, hogy azt a LongListSelector
              szerte az alkalmazás területén újrafelhasználhatóvá tegye. Miután ezzel készen vagyok, felépítem az ItemViewModelt,
              megszervezem a felület és az adatok közötti kötést (Binding). Ehhez a már lekérdezett és deszerializált adatokat 
-             fogom felhasználni.
-                  
-        */
+             fogom felhasználni.*/
 
 
-        // foursquare API kulcsok: // Dokumentálva!
+        // foursquare API kulcsok: 
         private const string _client_ID = "MEEMBBKDBZOVGYOZXTRG2PTQ0Q5GKMV3A2XJIDCDVMFF4EQ5";
         private const string _client_SECRET = "KII3G1GW3ONBWG2W5FH1NJQZTT055A1C4H0DJWJCA3N1B5WU";
         private const int _api_VERSION = 20131016;
 
-        // API specifikus tárolók: // Dokumentálva!
+        // API specifikus tárolók: 
         private int _limit = 50;
         private string _intent = "checkin";
         public int _radius = 30000;
 
-        // További információkért lásd a https://developer.foursquare.com/docs/venues/search webhelyet: // Dokumentálva!
+        // További információkért lásd a https://developer.foursquare.com/docs/venues/search webhelyet: 
         public async Task<VenueModel>DataQueryForVenueViewModel(double latitude, double longitude, string searchKey = null)// Szükséges alapértelmezett paraméter.
         {
             // Meghívom a segédfüggvényemet, így átláthatóbbá a kód.
@@ -75,7 +73,7 @@ namespace City_Trends
 
         }
 
-        // További információkért lásd a https://developer.foursquare.com/docs/venues/tips webhelyet: // Dokumentálva!
+        // További információkért lásd a https://developer.foursquare.com/docs/venues/tips webhelyet: 
         public async Task<TipModel> TipsFromVenueData(string venue_ID)
         {
             string requestURL = createRequestURL(_api_VERSION, venue_ID, _limit, _client_ID, _client_SECRET);
@@ -95,7 +93,7 @@ namespace City_Trends
             return tipModel;
         }
 
-        // Search Venues verzió: // Dokumentálva!
+        // Search Venues verzió: 
         private string createRequestURL(int _api_VERSION,double latitude,double longitude,
                                         string searchKey,int _limit,string _intent,int _radius,
                                         string _client_ID,string _client_SECRET)
@@ -115,7 +113,7 @@ namespace City_Trends
             requestURL = string.Format(requestURL, _api_VERSION, ll, searchKey, _limit, _intent, _radius, _client_ID, _client_SECRET);
             return requestURL;
         }
-        // Tips from a Venue verzió: // Dokumentálva!
+        // Tips from a Venue verzió: 
         private string createRequestURL(int _api_VERSION,string venue_ID,int _limit,    
                                         string _client_ID,string _client_SECRET)
         {

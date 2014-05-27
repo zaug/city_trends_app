@@ -9,20 +9,7 @@ using System.Threading.Tasks;
  */
 
 namespace City_Trends
-{   // Dokumentálva!
-    /*Venues:[{
-            "id":,
-            "name":,
-            "contact":{},
-            "location":{},
-            "categories":[{}],
-            "verified":,
-            "stats":{},
-            "specials":{},
-            "hereNow":{},
-            "referralId":
-         }],
-    */
+{  
     public class VenueData
     {
         public string id { get; set; }
@@ -37,16 +24,6 @@ namespace City_Trends
         public string referralId { get; set; }
     }
 
-        /*"location":{			 
-            "address":,		 
-            "lat":,			 
-            "lng":,			 
-            "distance":,		 
-            "cc":,			 
-            "city":,		 
-            "country":		 
-             },
-    */
     public class Location
     {
         public string address { get; set; }
@@ -58,15 +35,6 @@ namespace City_Trends
         public string country { get; set; }
     }
 
-    /*"categories":[{			 
-            "id":,			 
-            "name":,		 
-            "pluralName":,		 
-            "shortName":,							
-            "icon":{},
-            "primary":		 
-                }],
-    */
     public class Categories
     {
         public string id { get; set; }
@@ -77,12 +45,6 @@ namespace City_Trends
         public bool primary { get; set; }
     }
 
-    /*"hereNow":{			 
-				"count":,	
-                "summary":, 
-				"groups":		 
-				  },
-    */
     public class HereNow
     {
         public int count { get; set; }
@@ -90,12 +52,6 @@ namespace City_Trends
         public List<object> groups { get; set; }
     }
 
-    /*"stats":{			 
-            "checkinsCount":,	 
-            "usersCount":,		 
-            "tipCount":  		 
-            },
-    */
     public class Stats
     {
         public int checkinsCount { get; set; }
@@ -103,22 +59,12 @@ namespace City_Trends
         public int tipCount { get; set; }
     }
 
-    /*"icon":{		 
-                "prefix":, 	 
-                "suffix": 	 
-                },
-    */
     public class Icon
     {
         public string prefix { get; set; }
         public string suffix { get; set; }
     }
 
-    /*"specials":{			 
-				"count":,		 
-				"items":[]		 
-				   },
-    */
     public class Specials
     {
         public int count { get; set; }

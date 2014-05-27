@@ -38,7 +38,7 @@
                                        Style="{StaticResource PhoneTextSubtleStyle}"/>
             </StackPanel>
         </DataTemplate>
-    </phone:PhoneApplicationPage.Resources><!-- Dokumentálva!-->
+    </phone:PhoneApplicationPage.Resources>
 
     <Grid x:Name="LayoutRoot" Background="Transparent">
         <Grid.RowDefinitions>
@@ -68,7 +68,7 @@
                                     ItemsSource="{Binding Venues}"
                                     SelectionChanged="MainLongListSelector_SelectionChanged"
                                     ItemTemplate="{StaticResource MainPageTile}"
-                                    /><!-- Dokumentálva!-->
+                                    />
         </Grid>
         <TextBox Name="SearchBox"
                  HorizontalAlignment="Left" 
@@ -77,20 +77,20 @@
                  Grid.Row="1" 
                  TextWrapping="Wrap" 
                  VerticalAlignment="Top"
-                 Width="300" InputScope="Default"/><!-- Dokumentálva!-->
+                 Width="300" InputScope="Default"/>
         <maps:Map Name="MyMap"
             HorizontalAlignment="Left" 
             Margin="26,102,0,0"
             VerticalAlignment="Top"
             Height="191" 
-            Width="425" Grid.RowSpan="2"/><!-- Dokumentálva!-->
+            Width="425" Grid.RowSpan="2"/>
         <Button Name="SearchButton" Click="SearchButton_Click"
                 Content="Keresés" 
                 HorizontalAlignment="Left" 
                 Margin="296,173,0,0" 
                 Grid.Row="1" 
                 VerticalAlignment="Top" 
-                Width="172"/><!-- Dokumentálva!-->
+                Width="172"/>
     </Grid>
 
 </phone:PhoneApplicationPage>

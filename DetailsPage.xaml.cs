@@ -15,15 +15,15 @@ namespace City_Trends
     public partial class DetailsPage : PhoneApplicationPage
     {
         // A kedvenceket direkt privát elérésűeknek választottam:
-        private string _userFavVenue; // Ezt jelenítjük majd meg a kedvencek listáján.  // Dokumentálva!
-        private string _userFavID;    // Ez pedig a venue azonosítója lesz.             // Dokumentálva!
+        private string _userFavVenue; // Ezt jelenítjük majd meg a kedvencek listáján.  
+        private string _userFavID;    // Ez pedig a venue azonosítója lesz.            
         
         protected override void OnNavigatedTo(NavigationEventArgs e) 
         {
             if (DataContext == null)
             {
                 string selectedIndex = "";
-                if (NavigationContext.QueryString.TryGetValue("selectedItem", out selectedIndex))   // Dokumentálva!
+                if (NavigationContext.QueryString.TryGetValue("selectedItem", out selectedIndex))  
                 {
                     int index = int.Parse(selectedIndex);
                     DataContext = App.ViewModel.Venues[index];
@@ -35,7 +35,7 @@ namespace City_Trends
             // Elmentjük a venue ID-ját, még szükségünk lesz rá:
             _userFavID = selectedVenue;
             _userFavVenue = NavigationContext.QueryString["selectedVenueName"];
-        }               // Dokumentálva!
+        }              
 
         public DetailsPage()
         {
@@ -43,7 +43,6 @@ namespace City_Trends
             BuildLocalizedApplicationBar();
         }
         
-        // Dokumentálva!
         private void BuildLocalizedApplicationBar()
         {
             ApplicationBar = new ApplicationBar();
@@ -62,7 +61,7 @@ namespace City_Trends
                     minden mentéskor/törléskor újraírunk egy JSON fájlt az IsolatedStorage-ben, így ha a felhasználó
                     meg akarja nézni a kedvenceit, ki fogjuk tudni íratni azt a listát.
         */
-        // Dokumentálva!
+       
         void saveBarButton_Click(object sender, EventArgs e)
         {          
              

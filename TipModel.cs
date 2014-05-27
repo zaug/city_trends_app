@@ -5,8 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace City_Trends.Tips
-{   // Dokumentálva!
-    public class TipModel        // Bázisosztály
+{   
+    public class TipModel        
     {
         public ReturnCode meta { get; set; }
         public TipGroup response { get; set; }

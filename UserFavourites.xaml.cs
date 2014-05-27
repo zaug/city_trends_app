@@ -12,8 +12,6 @@ using Newtonsoft.Json;
 using System.IO.IsolatedStorage;
 using System.IO;
 
-// balint.dezso@gmail.com - konzultáció.
-
 namespace City_Trends
 {
     public partial class UserFavourites : PhoneApplicationPage
@@ -21,15 +19,15 @@ namespace City_Trends
         /* Szükséges redundancia (beletöltöm az OnNavigatedTo-ban, és magának az osztály konstruktorának belsejében használom
            fel, mint függvényparamétert. Az egységesség érdekében itt is ugyanazokat a neveket adtam a változóimnak (lsd. DetailsPage):
         */
-        private string _userFavVenue;   // Dokumentálva!
-        private string _userFavID;      // Dokumentálva!
+        private string _userFavVenue;   
+        private string _userFavID;     
 
         /* A következő szótárat 2 helyen is felhasználjuk: a törlő és a hozzáadó metódusoknál. A program indulásakor 
          * a szótárat abból a fájlból inicializáljuk, amibe az előző munkamenet idején mentettük adatainkat:
         */
-        private const string FavFile = "Favourite.json"; // Dokumentálva!
+        private const string FavFile = "Favourite.json"; 
 
-        private static Dictionary<string, string> _favourites = new Dictionary<string, string>();  // Dokumentálva!
+        private static Dictionary<string, string> _favourites = new Dictionary<string, string>();  
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
@@ -77,7 +75,7 @@ namespace City_Trends
             }
 
             FavList.ItemsSource = App.ViewModel.Favourites;
-        }   // Dokumentálva!
+        }   
 
         public UserFavourites()
         {
@@ -94,7 +92,7 @@ namespace City_Trends
             deleteItems.Click+=deleteItems_Click;
             ApplicationBar.Buttons.Add(deleteItems);
             ApplicationBar.IsVisible = false;
-        }               // Dokumentálva!
+        }               
 
         private void deleteItems_Click(object sender, EventArgs e)
         {
@@ -112,7 +110,7 @@ namespace City_Trends
             }
             // Frissítjük a felületet:
             App.ViewModel.LoadFavourites(_favourites,true);
-        }           // Dokumentálva!
+        }           
 
         private void FavListSelector_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -126,7 +124,7 @@ namespace City_Trends
             {
                 ApplicationBar.IsVisible = true;
             }
-        }       // Dokumentálva!
+        }       
         /* Lekérdezzük az alkalmazás által használt tárterületet (IsolatedStorage), megmondjuk az alkalmazásnak,
         hogy hová (mappa) mentse az adatokat (file). Mivel a függvény szignatúrája Dictionary, és nekünk elég, ha
         csak egy json file-t írunk, Szerializálnunk kell a szótár adatait. A folyamatjelzőt itt is megjelenítem:
@@ -146,8 +144,8 @@ namespace City_Trends
                     }
                 }
             }
-        }   // Dokumentálva!
-        private Dictionary<string, string> ReLoadFavourites(string FavFile) // Dokumentálva!
+        }  
+        private Dictionary<string, string> ReLoadFavourites(string FavFile) 
         {
             Dictionary<string, string> reloadedFavourites = new Dictionary<string, string>();
 

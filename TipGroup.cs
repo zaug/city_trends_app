@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace City_Trends.Tips
-{   // Dokumentálva!
+{   
     public class TipGroup           // Lekérdezett tippek adatai.
     {
         public Tips tips { get; set; }

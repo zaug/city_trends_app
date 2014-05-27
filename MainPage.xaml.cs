@@ -16,11 +16,11 @@ using Coding4Fun.Toolkit.Controls;
 
 namespace City_Trends
 {
-    public partial class MainPage : PhoneApplicationPage // Dokumentálva!
+    public partial class MainPage : PhoneApplicationPage 
     {
-        public string searchValue = string.Empty; // Dokumentálva!
+        public string searchValue = string.Empty; 
 
-        public MainPage() // Dokumentálva!
+        public MainPage() 
         {
             InitializeComponent();
             BuildLocalizedApplicationBar();
@@ -28,7 +28,7 @@ namespace City_Trends
 
             DataContext = App.ViewModel;
         }
-        // Dokumentálva!
+        
         private async void MainPage_Loaded(object sender, RoutedEventArgs e)
         {
             Geolocator location = new Geolocator();
@@ -39,7 +39,7 @@ namespace City_Trends
             MyMap.Center = myMapCenter;
             MyMap.ZoomLevel = 15;            
         }
-        // Dokumentálva!
+       
         private void SearchButton_Click(object sender, RoutedEventArgs e)
         {
             searchValue = HttpUtility.UrlEncode(SearchBox.Text); // Explicit kasztolás (defenzív kód).
@@ -47,7 +47,7 @@ namespace City_Trends
         }
 
         
-        // Alapértelmezetten betölti a VenueView-et: // Dokumentálva!
+        // Alapértelmezetten betölti a VenueView-et: 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             
@@ -56,7 +56,7 @@ namespace City_Trends
                 App.ViewModel.LoadVenues(searchValue);    
             }
         }
-        // Dokumentálva!
+       
         private void MainLongListSelector_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (MainLongListSelector.SelectedItem == null) { return; }

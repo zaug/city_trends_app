@@ -3,7 +3,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:vm="clr-namespace:City_Trends.ViewModels"
     SampleProperty="Sample Text Property Value">
-    <!--Dokumentálva!-->
+    
     <vm:MainViewModel.Venues>
         <vm:VenueView ID="0" 
                           Name="Margitsziget \/ Margit híd (4, 6)" 
